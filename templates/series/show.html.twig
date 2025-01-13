@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Series{% endblock %}
+
+{% block body %}
+    <h1>Series</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ series.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ series.title }}</td>
+            </tr>
+            <tr>
+                <th>Autor</th>
+                <td>{{ series.autor }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ series.genre }}</td>
+            </tr>
+            <tr>
+                <th>Summarize</th>
+                <td>{{ series.summarize }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ series.duration }}</td>
+            </tr>
+            <tr>
+                <th>Nbrepisodes</th>
+                <td>{{ series.nbrepisodes }}</td>
+            </tr>
+            <tr>
+                <th>Nbrseasons</th>
+                <td>{{ series.nbrseasons }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_series_index') }}">back to list</a>
+
+    <a href="{{ path('app_series_edit', {'id': series.id}) }}">edit</a>
+
+    {{ include('series/_delete_form.html.twig') }}
+{% endblock %}

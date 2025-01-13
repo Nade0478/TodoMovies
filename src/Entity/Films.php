@@ -20,14 +20,17 @@ class Films
     #[ORM\Column(length: 255)]
     private ?string $autor = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $genre = null;
-
     #[ORM\Column(type: Types::TEXT)]
     private ?string $summarize = null;
 
     #[ORM\Column]
     private ?int $duration = null;
+
+    #[ORM\ManyToOne(inversedBy: 'films')]
+    private ?Avis $avis = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Genre $genre = null;
 
     public function getId(): ?int
     {
@@ -58,30 +61,6 @@ class Films
         return $this;
     }
 
-    public function getDurations(): ?string
-    {
-        return $this->durations;
-    }
-
-    public function setDurations(string $durations): static
-    {
-        $this->durations = $durations;
-
-        return $this;
-    }
-
-    public function getGenre(): ?string
-    {
-        return $this->genre;
-    }
-
-    public function setGenre(string $genre): static
-    {
-        $this->genre = $genre;
-
-        return $this;
-    }
-
     public function getSummarize(): ?string
     {
         return $this->summarize;
@@ -102,6 +81,30 @@ class Films
     public function setDuration(int $duration): static
     {
         $this->duration = $duration;
+
+        return $this;
+    }
+
+    public function getAvis(): ?Avis
+    {
+        return $this->avis;
+    }
+
+    public function setAvis(?Avis $avis): static
+    {
+        $this->avis = $avis;
+
+        return $this;
+    }
+
+    public function getGenre(): ?Genre
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?Genre $genre): static
+    {
+        $this->genre = $genre;
 
         return $this;
     }
