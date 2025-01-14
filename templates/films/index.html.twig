@@ -13,7 +13,6 @@
                 <th>Autor</th>
                 <th>Genre</th>
                 <th>Summarize</th>
-                <th>Duration</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,7 +24,6 @@
                 <td>{{ film.autor }}</td>
                 <td>{{ film.genre }}</td>
                 <td>{{ film.summarize }}</td>
-                <td>{{ film.duration }}</td>
                 <td>
                     <a href="{{ path('app_films_show', {'id': film.id}) }}">show</a>
                     <a href="{{ path('app_films_edit', {'id': film.id}) }}">edit</a>

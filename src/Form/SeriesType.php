@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Genre;
 use App\Entity\Series;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SeriesType extends AbstractType
@@ -14,9 +16,11 @@ class SeriesType extends AbstractType
         $builder
             ->add('title')
             ->add('autor')
-            ->add('genre')
+            ->add('genre', EntityType::class, [
+                'class' => Genre::class,
+                'choice_label' => 'name',
+            ])
             ->add('summarize')
-            ->add('duration')
             ->add('nbrepisodes')
             ->add('nbrseasons')
         ;

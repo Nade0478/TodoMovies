@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Entity\Series;
+
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\GenreRepository;
 use Doctrine\Common\Collections\Collection;
@@ -22,6 +22,13 @@ class Genre
     /**
      * @var Collection<int, Series>
      */
+    #[ORM\OneToMany(targetEntity: Series::class, mappedBy: 'genre')]
+    private Collection $series;
+
+    public function __construct()
+    {
+        $this->series = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -40,5 +47,33 @@ class Genre
         return $this;
     }
 
-    
+    /**
+     * @return Collection<int, Series>
+     */
+    public function getSeries(): Collection
+    {
+        return $this->series;
+    }
+
+    public function addSeries(Series $series): static
+    {
+        if (!$this->series->contains($series)) {
+            $this->series->add($series);
+            $series->setGenre($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSeries(Series $series): static
+    {
+        if ($this->series->removeElement($series)) {
+            // set the owning side to null (unless already changed)
+            if ($series->getGenre() === $this) {
+                $series->setGenre(null);
+            }
+        }
+
+        return $this;
+    }
 }

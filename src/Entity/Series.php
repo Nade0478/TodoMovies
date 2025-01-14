@@ -19,15 +19,9 @@ class Series
 
     #[ORM\Column(length: 255)]
     private ?string $autor = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $genre = null;
-
+    
     #[ORM\Column(type: Types::TEXT)]
     private ?string $summarize = null;
-
-    #[ORM\Column]
-    private ?int $duration = null;
 
     #[ORM\Column]
     private ?int $nbrepisodes = null;
@@ -36,10 +30,10 @@ class Series
     private ?int $nbrseasons = null;
 
     #[ORM\ManyToOne(inversedBy: 'series')]
-    private ?Genre $genres = null;
+    private ?Avis $avis = null;
 
     #[ORM\ManyToOne(inversedBy: 'series')]
-    private ?Avis $avis = null;
+    private ?Genre $genre = null;
 
     public function getId(): ?int
     {
@@ -70,18 +64,6 @@ class Series
         return $this;
     }
 
-    public function getGenre(): ?string
-    {
-        return $this->genre;
-    }
-
-    public function setGenre(string $genre): static
-    {
-        $this->genre = $genre;
-
-        return $this;
-    }
-
     public function getSummarize(): ?string
     {
         return $this->summarize;
@@ -90,18 +72,6 @@ class Series
     public function setSummarize(string $summarize): static
     {
         $this->summarize = $summarize;
-
-        return $this;
-    }
-
-    public function getDuration(): ?int
-    {
-        return $this->duration;
-    }
-
-    public function setDuration(int $duration): static
-    {
-        $this->duration = $duration;
 
         return $this;
     }
@@ -138,6 +108,18 @@ class Series
     public function setAvis(?Avis $avis): static
     {
         $this->avis = $avis;
+
+        return $this;
+    }
+
+    public function getGenre(): ?Genre
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?Genre $genre): static
+    {
+        $this->genre = $genre;
 
         return $this;
     }

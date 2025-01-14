@@ -23,9 +23,6 @@ class Films
     #[ORM\Column(type: Types::TEXT)]
     private ?string $summarize = null;
 
-    #[ORM\Column]
-    private ?int $duration = null;
-
     #[ORM\ManyToOne(inversedBy: 'films')]
     private ?Avis $avis = null;
 
@@ -72,19 +69,7 @@ class Films
 
         return $this;
     }
-
-    public function getDuration(): ?int
-    {
-        return $this->duration;
-    }
-
-    public function setDuration(int $duration): static
-    {
-        $this->duration = $duration;
-
-        return $this;
-    }
-
+    
     public function getAvis(): ?Avis
     {
         return $this->avis;

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\Entity",
+    "\\src\\Form",
+    "\\templates",
+    "\\templates\\main"
+  ],
+  "SelectedNode": "\\templates\\main\\index.html.twig",
+  "PreviewInSolutionExplorer": false
+}

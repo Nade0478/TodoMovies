@@ -3,20 +3,19 @@
 {% block title %}Series index{% endblock %}
 
 {% block body %}
-    <h1>Series index</h1>
+    <h1>Index des séries</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Autor</th>
+                <th>Titre</th>
+                <th>Auteur</th>
                 <th>Genre</th>
-                <th>Summarize</th>
-                <th>Duration</th>
-                <th>Nbrepisodes</th>
-                <th>Nbrseasons</th>
-                <th>actions</th>
+                <th>Résumer</th>
+                <th>Nombre d'épisode</th>
+                <th>Nombre de saisons</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,9 +24,8 @@
                 <td>{{ series.id }}</td>
                 <td>{{ series.title }}</td>
                 <td>{{ series.autor }}</td>
-                <td>{{ series.genre }}</td>
+                <td>{{ series.genre.name }}</td>
                 <td>{{ series.summarize }}</td>
-                <td>{{ series.duration }}</td>
                 <td>{{ series.nbrepisodes }}</td>
                 <td>{{ series.nbrseasons }}</td>
                 <td>

@@ -29,7 +29,7 @@ class MainController extends AbstractController
             'films_param' => 'Salut les amis!', 
         ]); 
     }
-    #[Route('/series', name: 'series')] 
+    #[Route('app_series_index', name: 'series')] 
     public function series(): Response 
     { 
         return $this->render('main/series.html.twig', [ 

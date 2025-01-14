@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-<header class="navbar navbar-expand-lg bd-navbar sticky-top">
+
+<header class="navbar navbar-expand-lg bd-navbar sticky-top fixed-top">
   <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
       <div class="d-lg-none" style="width: 4.25rem;"></div>
 
@@ -20,8 +21,8 @@
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="{{ path('home') }}" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="{{ path('films') }}" class="nav-link px-2 text-white">Films</a></li>
-                <li><a href="{{ path('series') }}" class="nav-link px-2 text-white">Séries</a></li>
+                <li><a href="{{ path('app_films_index') }}" class="nav-link px-2 text-white">Films</a></li>
+                <li><a href="{{ path('app_series_index') }}" class="nav-link px-2 text-white">Séries</a></li>
                 <li><a href="{{ path('contact') }}" class="nav-link px-2 text-white">Contact</a></li>
             </ul>
 
@@ -44,10 +45,26 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Env/Workspace/Application-Suiv-iSeries-Films/applicationFilmsEtSeries/src/Controller/MainController.php</code></li>
-        <li>Your template at <code>C:/Env/Workspace/Application-Suiv-iSeries-Films/applicationFilmsEtSeries/templates/main/index.html.twig</code></li>
-    </ul>
+    <div class="card bg-dark text-white">
+  <img src="..." class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
 </div>
+</div>
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Bienvenue sur notre site de streaming</h1>
+            <p class="lead text-muted">Regardez vos films et séries préférés en streaming</p>
+            <p>
+                <a href="{{ path('app_films_index') }}" class="btn btn-primary my-2">Films</a>
+                <a href="{{ path('app_series_index') }}" class="btn btn-secondary my-2">Séries</a>
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}Series{% endblock %}
 
 {% block body %}
-    <h1>Series</h1>
+    <h1>Séries</h1>
 
     <table class="table">
         <tbody>
@@ -16,7 +16,7 @@
                 <td>{{ series.title }}</td>
             </tr>
             <tr>
-                <th>Autor</th>
+                <th>Auteur</th>
                 <td>{{ series.autor }}</td>
             </tr>
             <tr>
@@ -28,23 +28,19 @@
                 <td>{{ series.summarize }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
-                <td>{{ series.duration }}</td>
-            </tr>
-            <tr>
-                <th>Nbrepisodes</th>
+                <th>Nombres d'épisodes</th>
                 <td>{{ series.nbrepisodes }}</td>
             </tr>
             <tr>
-                <th>Nbrseasons</th>
+                <th>Nombre de saisons</th>
                 <td>{{ series.nbrseasons }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_series_index') }}">back to list</a>
+    <a href="{{ path('app_series_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_series_edit', {'id': series.id}) }}">edit</a>
+    <a href="{{ path('app_series_edit', {'id': series.id}) }}">Valider</a>
 
     {{ include('series/_delete_form.html.twig') }}
 {% endblock %}

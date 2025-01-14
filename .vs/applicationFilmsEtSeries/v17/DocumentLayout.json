@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\templates\\main\\index.html.twig||{AD21DC51-9D17-4E3D-A059-03EDB68D22F0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:templates\\main\\index.html.twig||{AD21DC51-9D17-4E3D-A059-03EDB68D22F0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\templates\\base.html.twig||{AD21DC51-9D17-4E3D-A059-03EDB68D22F0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:templates\\base.html.twig||{AD21DC51-9D17-4E3D-A059-03EDB68D22F0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\src\\Form\\GenreType.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Form\\GenreType.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\src\\Form\\AvisType.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Form\\AvisType.php||{3D2461EC-8045-4AA9-ABFB-812292AE795D}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html.twig",
+              "DocumentMoniker": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\templates\\main\\index.html.twig",
+              "RelativeDocumentMoniker": "templates\\main\\index.html.twig",
+              "ToolTip": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\templates\\main\\index.html.twig",
+              "RelativeToolTip": "templates\\main\\index.html.twig",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000007|",
+              "WhenOpened": "2025-01-14T08:29:58.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "base.html.twig",
+              "DocumentMoniker": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\templates\\base.html.twig",
+              "RelativeDocumentMoniker": "templates\\base.html.twig",
+              "ToolTip": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\templates\\base.html.twig",
+              "RelativeToolTip": "templates\\base.html.twig",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000007|",
+              "WhenOpened": "2025-01-14T08:29:49.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenreType.php",
+              "DocumentMoniker": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\src\\Form\\GenreType.php",
+              "RelativeDocumentMoniker": "src\\Form\\GenreType.php",
+              "ToolTip": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\src\\Form\\GenreType.php",
+              "RelativeToolTip": "src\\Form\\GenreType.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
+              "WhenOpened": "2025-01-14T08:29:36.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AvisType.php",
+              "DocumentMoniker": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\src\\Form\\AvisType.php",
+              "RelativeDocumentMoniker": "src\\Form\\AvisType.php",
+              "ToolTip": "C:\\Env\\Workspace\\Application-Suiv-iSeries-Films\\applicationFilmsEtSeries\\src\\Form\\AvisType.php",
+              "RelativeToolTip": "src\\Form\\AvisType.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
+              "WhenOpened": "2025-01-14T08:29:29.958Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
