@@ -3,41 +3,40 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<section class="navbar col-12">
-<header class="navbar navbar-expand-xl bd-navbar sticky-top">
-  <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
-    <div class="d-lg-none" style="width: 4.25rem;"></div>
-    <a class="navbar-brand p-0 me-0 me-lg-12" href="/" aria-label="Bootstrap">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
-      </svg>
-    </a>
-  </nav>
-  <header class="p-3 text-bg-dark">
+<!--Navbar-->
+<section>
+<header class="p-3 text-bg-warning">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-between">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+            </svg>
         </a>
-        <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="{{ path('home') }}" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="{{ path('films') }}" class="nav-link px-2 text-white">Films</a></li>
-          <li><a href="{{ path('app_series_index') }}" class="nav-link px-2 text-white">Séries</a></li>
-          <li><a href="{{ path('contact') }}" class="nav-link px-2 text-white">Contact</a></li>
-        </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" data-has-listeners="true" spellcheck="false" data-ms-editor="true">
-        </form>
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{{ path('home') }}" class="nav-link px-2 text-secondary">Accueil</a></li>
+                <li><a href="{{ path('app_films_index') }}" class="nav-link px-2 text-white">Films</a></li>
+                <li><a href="{{ path('app_series_index') }}" class="nav-link px-2 text-white">Séries</a></li>
+                <li><a href="{{ path('contact') }}" class="nav-link px-2 text-white">Contact</a></li>
+            </ul>
+            <div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-secondary text-light" type="submit">Rechercher</button><br>
+                </form>
+            </div>
+            <div class="text-end">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="{{ path('app_login') }}" class="nav-link px-2 text-black">Connexion</a></li>
+                    <li><a href="{{ path('app_register') }}" class="nav-link px-2 text-black">Inscription</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 </section>
+<!--End Navbar-->
 <!-- Contact 6 - Bootstrap Brain Component -->
 <section class="bg-light py-3 py-md-5">
   <div class="container">
