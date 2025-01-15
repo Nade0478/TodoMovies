@@ -3,39 +3,39 @@
 {% block title %}Films index{% endblock %}
 
 {% block body %}
-    <h1>Films index</h1>
+    <h1>Index des films</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Autor</th>
+                <th>Titre</th>
+                <th>Auteur</th>
                 <th>Genre</th>
-                <th>Summarize</th>
-                <th>actions</th>
+                <th>Résumer</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for film in films %}
+        {% for films in films %}
             <tr>
-                <td>{{ film.id }}</td>
-                <td>{{ film.title }}</td>
-                <td>{{ film.autor }}</td>
-                <td>{{ film.genre }}</td>
-                <td>{{ film.summarize }}</td>
+                <td>{{ films.id }}</td>
+                <td>{{ films.title }}</td>
+                <td>{{ films.autor }}</td>
+                <td>{{ films.genre.name }}</td>
+                <td>{{ films.summarize }}</td>
                 <td>
-                    <a href="{{ path('app_films_show', {'id': film.id}) }}">show</a>
-                    <a href="{{ path('app_films_edit', {'id': film.id}) }}">edit</a>
+                    <a href="{{ path('app_films_show', {'id': films.id}) }}">Montrer</a>
+                    <a href="{{ path('app_films_edit', {'id': films.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Non trouver</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_films_new') }}">Create new</a>
+    <a href="{{ path('app_films_new') }}">Créer</a>
 {% endblock %}

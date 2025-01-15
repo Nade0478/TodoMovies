@@ -26,7 +26,7 @@ class Films
     #[ORM\ManyToOne(inversedBy: 'films')]
     private ?Avis $avis = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'films')]
     private ?Genre $genre = null;
 
     public function getId(): ?int

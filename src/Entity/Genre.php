@@ -25,9 +25,16 @@ class Genre
     #[ORM\OneToMany(targetEntity: Series::class, mappedBy: 'genre')]
     private Collection $series;
 
+    /**
+     * @var Collection<int, Films>
+     */
+    #[ORM\OneToMany(targetEntity: Films::class, mappedBy: 'genre')]
+    private Collection $films;
+
     public function __construct()
     {
         $this->series = new ArrayCollection();
+        $this->films = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -71,6 +78,36 @@ class Genre
             // set the owning side to null (unless already changed)
             if ($series->getGenre() === $this) {
                 $series->setGenre(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Films>
+     */
+    public function getFilms(): Collection
+    {
+        return $this->films;
+    }
+
+    public function addFilm(Films $film): static
+    {
+        if (!$this->films->contains($film)) {
+            $this->films->add($film);
+            $film->setGenre($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFilm(Films $film): static
+    {
+        if ($this->films->removeElement($film)) {
+            // set the owning side to null (unless already changed)
+            if ($film->getGenre() === $this) {
+                $film->setGenre(null);
             }
         }
 

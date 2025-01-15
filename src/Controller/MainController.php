@@ -22,7 +22,7 @@ class MainController extends AbstractController
             'contact_param' => 'Salut les amis!', 
         ]); 
     }
-    #[Route('/films', name: 'films')] 
+    #[Route('/app_films_index', name: 'films')] 
     public function films(): Response 
     { 
         return $this->render('main/films.html.twig', [ 

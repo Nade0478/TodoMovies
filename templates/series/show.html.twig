@@ -12,7 +12,7 @@
                 <td>{{ series.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ series.title }}</td>
             </tr>
             <tr>
@@ -21,10 +21,10 @@
             </tr>
             <tr>
                 <th>Genre</th>
-                <td>{{ series.genre }}</td>
+                <td>{{ series.genre.name }}</td>
             </tr>
             <tr>
-                <th>Summarize</th>
+                <th>Résumer</th>
                 <td>{{ series.summarize }}</td>
             </tr>
             <tr>
@@ -40,7 +40,7 @@
 
     <a href="{{ path('app_series_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_series_edit', {'id': series.id}) }}">Valider</a>
+    <a href="{{ path('app_series_edit', {'id': series.id}) }}">Editer</a>
 
     {{ include('series/_delete_form.html.twig') }}
 {% endblock %}
