@@ -8,13 +8,29 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<header class="p-3 mb-3 border-bottom bg-warning">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>            </a>
+          <li><a href="{{ path('home') }}" class="nav-link px-2 link-secondary">Accueil</a></li>
+          <li><a href="{{ path('app_films_index') }}" class="nav-link px-2 link-dark">Ajouter films</a></li>
+          <li><a href="{{ path('app_series_index') }}" class="nav-link px-2 link-dark">Ajouter séries</a></li>
+          <li><a href="{{ path('contact') }}" class="nav-link px-2 link-dark">Contact</a></li>
+          <li><a href="{{ path('app_logout') }}" class="nav-link px-2 link-dark">Déconnexion</a></li>
+        </ul>
+    </div>
+  </header>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Env/Workspace/Application-Suiv-iSeries-Films/applicationFilmsEtSeries/src/Controller/UserController.php</code></li>
-        <li>Your template at <code>C:/Env/Workspace/Application-Suiv-iSeries-Films/applicationFilmsEtSeries/templates/user/index.html.twig</code></li>
-    </ul>
-</div>
+  <main class="px-3 text-center">
+    <h1>Bienvenue sur ta page</h1><br>
+    <p class="lead">"Passionné par les films et les séries !! <br> Toujours à la recherche des prochaines pépites à découvrir et partager ? <br> Rejoignez-moi pour explorer les dernières sorties, échanger nos avis, et découvrir ensemble des trésors cachés du cinéma et de la télévision."</p><br>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
+    </p>
+  </main>
 {% endblock %}

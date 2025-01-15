@@ -36,12 +36,15 @@ aria-label="Toggle navigation">
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" data-has-listeners="true" spellcheck="false" data-ms-editor="true">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." textarea= "Search" aria-label="Search" data-has-listeners="true" spellcheck="false" data-ms-editor="true">
+                    <button type="submit" class="btn btn-warning text-right">Rechercher</button>
                 </form>
 
                 <div class="text-end">
-                    <button type="button" href="{{ path ('app_register') }}" class="btn btn-light">Inscription</button>
-                    <button type="button" href="{{ path ('app_login') }}"  class="btn btn-warning">Connexion</button>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="{{ path('app_login') }}" class="nav-link px-2 text-white">Connexion</a></li>
+                        <li><a href="{{ path('app_register') }}" class="nav-link px-2 text-white">Inscription</a></li>
+                    </ul>
                 </div>
             </div>
             </div>
