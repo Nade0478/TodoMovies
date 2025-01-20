@@ -4,6 +4,50 @@
 
 {% block body %}
 <style>
+    body {
+    background: rgb(166, 166, 166)
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: hsl(45, 100.00%, 51.00%);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: hsl(45, 100.00%, 51.00%);;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background:rgb(173, 173, 173);
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
@@ -18,6 +62,7 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>            </a>
           <li><a href="{{ path('home') }}" class="nav-link px-2 link-secondary">Accueil</a></li>
+          <li><a href="{{ path('app_profil') }}" class="nav-link px-2 link-dark">Mon profil</a></li>
           <li><a href="{{ path('app_films_index') }}" class="nav-link px-2 link-dark">Ajouter films</a></li>
           <li><a href="{{ path('app_series_index') }}" class="nav-link px-2 link-dark">Ajouter séries</a></li>
           <li><a href="{{ path('contact') }}" class="nav-link px-2 link-dark">Contact</a></li>
@@ -33,4 +78,31 @@
       <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
     </p>
   </main>
+  <div class="container rounded bg-white mt-8 mb-12">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 128 128" id="Layer_1" version="1.1" viewBox="0 0 128 128" xml:space="preserve"><circle cx="64" cy="64" fill="#4B5F83" id="circle" r="64"/><g id="icon"><path d="M64,99h35c0-16-10.4-29-24.6-33.4C80.1,62,84,55.7,84,48.5c0-11-9-20-20-20" fill="#E6E6E6" id="right"/><path d="M64,28.5c-11,0-20,9-20,20c0,7.2,3.9,13.6,9.6,17.1C39.4,70,29,83,29,99h35" fill="#FFFFFF" id="left"/></g></svg><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Mon profils</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Nom</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                    <div class="col-md-6"><label class="labels">Prénom</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">E-mail</label><input type="text" class="form-control" placeholder="entrer email" value=""></div>
+                    <div class="col-md-12"><label class="labels">Mots de passe</label><input type="text" class="form-control" placeholder="entrer mots de passe" value=""></div>
+                </div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Valide</button></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-B0RSnjB66e/kS+1L3iJ6UOr9+OrL8U4Q/Jl2v6uGozWS/iR0JKI+XMJm4+yJ7Sk7" crossorigin="
 {% endblock %}

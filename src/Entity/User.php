@@ -44,6 +44,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $firstname = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Profil $profil = null;
+
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Films $film = null;
+
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Series $serie = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,6 +165,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstname(string $firstname): static
     {
         $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getProfil(): ?Profil
+    {
+        return $this->profil;
+    }
+
+    public function setProfil(?Profil $profil): static
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    public function getFilm(): ?Films
+    {
+        return $this->film;
+    }
+
+    public function setFilm(?Films $film): static
+    {
+        $this->film = $film;
+
+        return $this;
+    }
+
+    public function getSerie(): ?Series
+    {
+        return $this->serie;
+    }
+
+    public function setSerie(?Series $serie): static
+    {
+        $this->serie = $serie;
 
         return $this;
     } 

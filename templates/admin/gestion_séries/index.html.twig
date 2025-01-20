@@ -1,0 +1,293 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin/GestionSériesController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<!--Navbar-->
+<section>
+    <div class="container text-bg-warning">
+        <div class="d-flex flex-wrap align-items-left justify-content-left justify-content-lg">
+            <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>            </a>
+<nav id="sidebar" class="sidebar background-dark">
+    <div class="sidebar-content js-simplebar">
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<div class="fw-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Administrateur</font></font></div>
+				</div>
+
+				<ul class="sidebar-nav list-unstyled">
+					<li class="sidebar-item active">
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/admin/dashboard"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tableau de bord</font></font></a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="/admin/gestion/users"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion users</font></font></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/gestion/films"> <font style= "cal-align: inherit;"><font style= "vertical-align: inherit;">Gestion Films</font></font></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/gestion/series"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Séries</font></font></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+    <!-- End Navbar-->
+</section>
+
+<div id="example"><script>
+  init({
+    title: 'Filter Control',
+    desc: 'Use Plugin: bootstrap-table-filter-control to filter table fields.',
+    links: [
+      'bootstrap-table.min.css'
+    ],
+    scripts: [
+      'bootstrap-table.min.js',
+      'extensions/filter-control/bootstrap-table-filter-control.min.js'
+    ]
+  })
+</script>
+
+<div class="bootstrap-table bootstrap5">
+      <div class="fixed-table-toolbar">
+        <div class="float-right search btn-group">
+          <button class="btn btn-secondary" type="button" name="clearSearch" title="Effacer les filtres"><i class="bi bi-trash"></i> </button>
+        </div>
+      </div>
+      
+      <div class="fixed-table-container" style="padding-bottom: 0px;">
+      <div class="fixed-table-header" style="display: none;"><table></table></div>
+      <div class="fixed-table-body">
+      <div class="fixed-table-loading table table-bordered table-hover" style="top: 88px;">
+      <span class="loading-wrap">
+    <span class="loading-text" style="font-size: 32px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chargement, veuillez patienter</font></font></span>
+    <span class="animation-wrap"><span class="animation-dot"></span></span>
+    </span>
+  
+      </div>
+      <table id="table" data-url="json/data1.json" data-filter-control="true" data-show-search-clear-button="true" class="table table-bordered table-hover">
+  <thead><tr><th data-field="id"><div class="th-inner "><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ID</font></font></div><div class="fht-cell"><div class="no-filter-control"></div></div></th><th data-field="name"><div class="th-inner "><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom de l'article</font></font></div><div class="fht-cell"><div class="filter-control"><input type="search" class="form-control bootstrap-table-filter-control-name search-input" style="width: 100%;" placeholder="" value=""></div></div></th><th data-field="price"><div class="th-inner "><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prix de l'article</font></font></div><div class="fht-cell"><div class="filter-control"><select class="form-select bootstrap-table-filter-control-price " style="width: 100%;" dir="ltr"><option value=""></option><option value="$0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0 $</font></font></option><option value="$1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 $</font></font></option><option value="$2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 2</font></font></option><option value="$3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 $</font></font></option><option value="$4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 $</font></font></option><option value="$5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 $</font></font></option><option value="$6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 6</font></font></option><option value="$7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 $</font></font></option><option value="$8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 $</font></font></option><option value="$9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 $</font></font></option><option value="$10"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10 $</font></font></option><option value="$11"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11 $</font></font></option><option value="$12"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12 $</font></font></option><option value="$13"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 13</font></font></option><option value="$14"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14 $</font></font></option><option value="$15"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15 $</font></font></option><option value="$16"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">16 $</font></font></option><option value="$17"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17 $</font></font></option><option value="$18"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18 $</font></font></option><option value="$19"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19 $</font></font></option><option value="$20"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20 $</font></font></option></select></div></div></th></tr></thead>
+<tbody><tr data-index="0"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Article 0</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0 $</font></font></td></tr><tr data-index="1"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Objet 1</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1 $</font></font></td></tr><tr data-index="2"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 2</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 2</font></font></td></tr><tr data-index="3"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 3</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3 $</font></font></td></tr><tr data-index="4"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 4</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4 $</font></font></td></tr><tr data-index="5"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Article 5</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5 $</font></font></td></tr><tr data-index="6"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 6</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 6</font></font></td></tr><tr data-index="7"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 7</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7 $</font></font></td></tr><tr data-index="8"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 8</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8 $</font></font></td></tr><tr data-index="9"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 9</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9 $</font></font></td></tr><tr data-index="10"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 10</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10 $</font></font></td></tr><tr data-index="11"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 11</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11 $</font></font></td></tr><tr data-index="12"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 12</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12 $</font></font></td></tr><tr data-index="13"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 13</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 13</font></font></td></tr><tr data-index="14"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 14</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14 $</font></font></td></tr><tr data-index="15"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 15</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15 $</font></font></td></tr><tr data-index="16"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">16</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 16</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">16 $</font></font></td></tr><tr data-index="17"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 17</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17 $</font></font></td></tr><tr data-index="18"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 18</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18 $</font></font></td></tr><tr data-index="19"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 19</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19 $</font></font></td></tr><tr data-index="20"><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Point 20</font></font></td><td class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20 $</font></font></td></tr></tbody></table></div>
+      <div class="fixed-table-footer"></div>
+      </div>
+      <div class="fixed-table-pagination" style="display: none;"></div>
+      </div><div class="clearfix"></div>
+
+<script>
+  function mounted() {
+    $('#table').bootstrapTable()
+  }
+</script>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Filter Menu Panel Group with Bootstrap</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="page-header">Filter Panel Group</h1>
+      </div>
+    </header>
+
+    <div class="primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <h2>Desktop</h2>
+            <div class="filter-menu">
+              <form>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a class="panel-title accordion-toggle visible-sm-block" role="button" data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters">
+                      Filter
+                    </a>
+                    <div class="panel-title hidden-sm">
+                      Filter
+                    </div><!-- /.panel-title -->
+                    <div class="panel-body">
+                      <button class="btn btn-default" type="submit">Apply Filters</button>
+                      <a class="btn btn-sm btn-link pull-right visible-sm-inline" href="#">Clear Selections</a>
+                      <a class="btn btn-sm btn-link pull-right hidden-sm" href="#">Reset</a>
+                    </div><!-- /.panel-body -->
+                  </div><!-- /.panel-heading -->
+
+                  <div class="panel-body">
+                    <div class="panel-group" id="filter-menu" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <a class="panel-title accordion-toggle" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Career Stage
+                          </a><!-- /.panel-title -->
+                        </div><!-- /.panel-heading -->
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="recent_graduate">Recent Graduate</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="imposter_syndrome">Imposter Syndrome</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="wise_old_head">Wise Old Head</label></div>
+                          </div><!-- /.panel-body -->
+                        </div><!-- /.panel-collapse -->
+                      </div><!-- /.panel -->
+
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                          <a class="panel-title accordion-toggle collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Topic
+                          </a><!-- /.panel-title -->
+                        </div><!-- /.panel-heading -->
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Politics</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Religion</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Music</label></div>
+                          </div><!-- /.panel-body -->
+                        </div><!-- /.panel-collapse -->
+                      </div><!-- /.panel -->
+
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                          <a class="panel-title accordion-toggle collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Format
+                          </a><!-- /.panel-title -->
+                        </div><!-- /.panel-heading -->
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="magazine">Magazine</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="website">Website</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="vine">Vine</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="format[]" value="tweet">Tweet</label></div>
+                          </div><!-- /.panel-body -->
+                        </div><!-- /.panel-collapse -->
+                      </div><!-- /.panel -->
+
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                          <a class="panel-title accordion-toggle collapsed" role="button" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Status
+                          </a><!-- /.panel-title -->
+                        </div><!-- /.panel-heading -->
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                          <div class="panel-body">
+                            <div class="checkbox"><label><input type="checkbox" name="status[]" value="single">Single</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="status[]" value="married">Married</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="status[]" value="its_complicated">It's complicated</label></div>
+                          </div><!-- /.panel-body -->
+                        </div><!-- /.panel-collapse -->
+                      </div><!-- /.panel -->
+                    </div><!-- /.panel-group -->
+                  </div><!-- /.panel-body -->
+
+                </div><!-- /.panel -->
+              </form>
+            </div><!-- /.filter-menu -->
+          </div>
+
+          <!-- -------------------------------------------------- -->
+
+          <div class="col-xs-6">
+            <h2>Tablet/Mobile</h2>
+            <div class="filter-menu mobile">
+              <form>
+                <div class="panel panel-mobile">
+                  <div class="panel-heading" role="tab" id="headingFiltersMobile">
+                    <a class="panel-title accordion-toggle" role="button" data-toggle="collapse" href="#collapseFiltersMobile" aria-expanded="false" aria-controls="collapseFiltersMobile">
+                      Filter
+                    </a>
+                    <div class="panel-body">
+                      <hr />
+                      <button class="btn btn-primary" type="submit">Apply Filters</button>
+                      <a class="btn btn-sm btn-link pull-right" href="#">Clear Selections</a>
+                    </div><!-- /.panel-body -->
+                  </div><!-- /.panel-heading -->
+                  <div id="collapseFiltersMobile" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFiltersMobile">
+                    <div class="panel-body">
+                      <div class="panel-group" id="filter-menu-mobile" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-mobile">
+                          <div class="panel-heading" role="tab" id="headingOneMobile">
+                            <a class="panel-title accordion-toggle" role="button" data-toggle="collapse" data-parent="#filter-menu-mobile" href="#collapseOneMobile" aria-expanded="true" aria-controls="collapseOneMobile">
+                              Career Stage
+                            </a><!-- /.panel-title -->
+                          </div><!-- /.panel-heading -->
+                          <div id="collapseOneMobile" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneMobile">
+                            <div class="panel-body">
+                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="recent_graduate">Recent Graduate</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="imposter_syndrome">Imposter Syndrome</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="wise_old_head">Wise Old Head</label></div>
+                            </div><!-- /.panel-body -->
+                          </div><!-- /.panel-collapse -->
+                        </div><!-- /.panel -->
+
+                        <div class="panel panel-mobile">
+                          <div class="panel-heading" role="tab" id="headingTwoMobile">
+                            <a class="panel-title accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#filter-menu-mobile" href="#collapseTwoMobile" aria-expanded="false" aria-controls="collapseTwoMobile">
+                              Topic
+                            </a><!-- /.panel-title -->
+                          </div><!-- /.panel-heading -->
+                          <div id="collapseTwoMobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoMobile">
+                            <div class="panel-body">
+                              <div class="checkbox"><label><input type="checkbox" name="topic[]" value="politics">Politics</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="topic[]" value="religion">Religion</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="topic[]" value="music">Music</label></div>
+                            </div><!-- /.panel-body -->
+                          </div><!-- /.panel-collapse -->
+                        </div><!-- /.panel -->
+
+                        <div class="panel panel-mobile">
+                          <div class="panel-heading" role="tab" id="headingThreeMobile">
+                            <a class="panel-title accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#filter-menu-mobile" href="#collapseThreeMobile" aria-expanded="false" aria-controls="collapseThreeMobile">
+                              Format
+                            </a><!-- /.panel-title -->
+                          </div><!-- /.panel-heading -->
+                          <div id="collapseThreeMobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeMobile">
+                            <div class="panel-body">
+                              <div class="checkbox"><label><input type="checkbox" name="format[]" value="magazine">Magazine</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="format[]" value="website">Website</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="format[]" value="vine">Vine</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="format[]" value="tweet">Tweet</label></div>
+                            </div><!-- /.panel-body -->
+                          </div><!-- /.panel-collapse -->
+                        </div><!-- /.panel -->
+
+                        <div class="panel panel-mobile">
+                          <div class="panel-heading" role="tab" id="headingFourMobile">
+                            <a class="panel-title accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#filter-menu-mobile" href="#collapseFourMobile" aria-expanded="false" aria-controls="collapseFourMobile">
+                              Status
+                            </a><!-- /.panel-title -->
+                          </div><!-- /.panel-heading -->
+                          <div id="collapseFourMobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourMobile">
+                            <div class="panel-body">
+                              <div class="checkbox"><label><input type="checkbox" name="status[]" value="single">Single</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="status[]" value="married">Married</label></div>
+                              <div class="checkbox"><label><input type="checkbox" name="status[]" value="its_complicated">It's complicated</label></div>
+                            </div><!-- /.panel-body -->
+                          </div><!-- /.panel-collapse -->
+                        </div><!-- /.panel -->
+                      </div><!-- /.panel-group -->
+                    </div><!-- /.panel-body -->
+                  </div><!-- /.panel-collapse -->
+                </div><!-- /.panel -->
+              </form>
+            </div><!-- /.filter-menu -->
+          </div>
+        </div>
+
+      </div><!-- /.container -->
+    </div><!-- /.primary -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+{% endblock %}

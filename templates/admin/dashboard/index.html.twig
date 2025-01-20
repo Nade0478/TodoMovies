@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin/DashboardController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<!--Navbar-->
+<section>
+    <div class="container text-bg-warning">
+        <div class="d-flex flex-wrap align-items-left justify-content-left justify-content-lg">
+            <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>            </a>
+<nav id="sidebar" class="sidebar background-dark">
+    <div class="sidebar-content js-simplebar">
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<div class="fw-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Administrateur</font></font></div>
+				</div>
+				<ul class="sidebar-nav list-unstyled">
+					<li class="sidebar-item active">
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/admin/dashboard"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tableau de bord</font></font></a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="/admin/gestion/users"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Users</font></font></a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/admin/gestion/contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Contact</font></font></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/gestion/films"> <font style= "cal-align: inherit;"><font style= "vertical-align: inherit;">Gestion Films</font></font></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/gestion/series"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Séries</font></font></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+    <!-- End Navbar-->
+</section>
+
+<!-- Début du code HTML pour votre dashboard -->
+
+
+<!-- Ajouter le code HTML pour votre dashboard ici -->
+<div class="example-wrapper">
+    <main class="px-3 text-center">
+    <h1>Tableaux de bord</h1><br>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Statistiques Films</h5> 
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcklEQVR4nO2WPU7EMBCFH8LDTwkNEj0VDRUX4B6UHIKKK3AEaJC2YLxaRIFAS0cPN4COFiHhF4HRiiykipJdhyRef5IVaTSO5mnm2QYSiUQtaMX3YWHhhKBivCk4bx1JSFc7wllnMxBs2uy9E4KK8aZgMnusHWEsHmEsQlAxHqXZqebCWbnlpdmvX3q4OuYXkuc4lS+qOXu369tl+U3VMfds/gqxwvz7RjXHfoy1sn2dMzvznI/Ryg7VDP72mRdn5dB7LP27EFSMl+VkunxAax4Lnbp3Knt1hGCGOoILmeDHMFQ5clZeczGftObcD7HVKyFT/BU2nMqpU8mm/nEqJ/4aq+iq2VGCG8quU7kpnHAPoeuIUwhCj9YAm62MFgIJicLs2c/x+9Tq8cuwF+JzaxciY3mioGK8849GzPCDyTg5lbveP+NDwjbNHhK2afaQsE2zh4TJI7F2hLF4hLEIQcV4UzCZPdaOsOMLCyMkkUigyDcQNC8AhXScegAAAABJRU5ErkJggg==" alt="cinema---v1">
+                        <p class="card-text">Nombre de films : </p> 
+                    </div> 
+                </div> 
+            </div> 
+        <div class="col-md-6"> 
+            <div class="card">
+                <div class="card-body"> 
+                    <h5 class="card-title">Statistiques Séries</h5>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVR4nO2aPQ7DIBSDGUKP3p+rdOEdKs0d8EKF1KF9QxO1EKPIn+Q1YFvygBKCEKIJ5R5O2eItW1xgsXRVmh7Z4rWeGVpTP9zdgH0qp3jpYWTZ3YjFpbmRvU3gJRkRI1P2nNyeU5wJk4seU0xtwhpOMfvycJIRMQJlhMm1BlM80uTinykesgn7YYrZl8RGyQgGaAFqxPjJQ40YP22okTfYSUONONhJQ4042ElDjTjYSUONONhJQ4042ElDjTjYSUONOOojGDttrClNc1ijPn7RL2rflVM8b3syrWZGbCZNczXR5UcCIQ7OEwXJs0no7hQpAAAAAElFTkSuQmCC" alt="albums">
+                    <p class="card-text">Nombre de Séries : </p>
+                </div> 
+            </div>
+        </div> 
+        <div class="col-md-6"> 
+            <div class="card">
+                <div class="card-body"> 
+                    <h5 class="card-title">Statistiques Utilisateurs</h5>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFFUlEQVR4nO1ZW4gcRRStZO7t3cVX/NGgouILiYk/viJEURQFo/HDCBEVBR8J/uiXERXii/iMIhg1DwPGvzXb987umnXBuEqMizEIZgUfEf2KURO/dHenqrOW3M5kGXu6px/TozLWgYJhurrq3FNV91GtlIODg4ODg4ODg4ODwz8Mu10db1kdp/5PsGOq1zA8Yhh+NIw2bAQ/GILVdrvqUd0M269O0IyfzhoeaZpxl/RR3QpDMJBkfMNueFd1I4wPl6caP9vgMtVt0IyvxGz5FzXjS03/E65T3QbN+H7EyN2zzwg/jzwbUd0GTbgjsvofZHnWNTAMmyOrHNTYW66r3q2a8XDEEW5U3YZa1bs5qxOskXeT6jbYNWquIfgigwB7pK/6L0MP4EJNeLchWGl8WJKVcG3IO1cz/tQiB9g/Xe05J7OgPiwRDrqKd+kqXqA6jWm/52zNOBYTt78NqHJVljGmBntPNwykGWcanN6MIfAnB/pOyzJGwJWrDcF3MeHzw+ltPWepDhr/S4s0VgdUuSHreHZYzQ+ocn3gV66zVXVy1vdkDpkrkQfhzx0RQTPuSju/mvGQJTUvSxVoBuGSgCtLxSD5naUqtMPqRM34WyoPwk9UmTAMV2ZOYwkejiXfr/oMwyophiQExpAOQpEJVkrFGMuDYHUOHleUJoAmXBsh+6esXm3QO18THow82xF9X8KaJjyQlbw4ysCv3NjEI+J/5EjWfO886SucIjyeKU0AQ/BOxOlNzD5j2BRRfl9EvKczr1qzEE/9jQfD90kJkyH4KsJxa5kCbIwqb/uVF5fjG4IvGwg/XtT4hvEebRhvb1zNIBcpmvHXCMc3yxTggZgzOyKrH916huDt8J0qLG5KcYvsAvEXPlwatxPrc29oWoQjO2BVaQLYYTVfM05lISxhTd4RT5ywraekDDYMF9tRdYw0iQJSFifNoQk/ljElbGYUbTJPaM0Ew/BY+uQwKH11FS9MIqZ9vMMQXhTXNOGd0if23QFcGI5NOJzn2JQGu0bN1YRvtHBYHx3NAQzBQ22f/WZxHwx5kJonO6IFj9c7WksEXFkqZ04SknBFCcfrsRuSSt+SBNg0uxhjCsKcgnA85HCEy0ieTLSj0ITryhZAE77wb9ul7IA6Sft4m2Z8zhBskVgbGkt4f2MVpwkXNRY7bRvPeLjG3oKj48tcYRUYCg1bhYsmfFYzrhCOpRtuqrDYEFTTjJJ7vhp5t1ir5tTYWyaFSQkrf0AyvfqYy6P3hzFiSWXJpdwsW0kwCF9uivXppIclDIkzmhzqO1WqsyJtkvtOkTFkLM34Xs5dMyM7pPDXJtuvPM04VHj1CPaJ8e0ugtwRyFhtHJ/RpOKqJcKz1b7nnmjne1/9O+JECTzy1QU19palrO5+UTbcIQTfpByHtUUFEMeWwuNr4SBchFOrvmJTnol3Jyi5N6DKNeKQIoItSDqjmvH3Ih886wnPH0k+pjEqhP2tmhNw5dqkHaMZP8tq/KKESeXCYr2EwIT2vNwIJbx7b14BJLQmGHKoPlcSj/VxFy6N6XRrARjva//MNe2czfkFgLfK5qEJ70kXgPDJ0idmHM0rQHiuyxfgiSwT396BiV/NLQDhax1YiBWpE9sNCjN+wclq/EH5FpBXgKltvWck+ZSCbU9jwdZahH51bN3R7JQXi7R6lbhFDFEFMU09Z9bz/PHCPBh3inOUi5eiPBwcHBwcHBwcHBwcHBxUl+EvllANS1YPfZ4AAAAASUVORK5CYII=" alt="groups">
+                    <p class="card-text">Nombre d'utilisateurs : </p>
+                </div> 
+            </div>
+        </div>
+        <div class="col-md-6"> 
+            <div class="card">
+                <div class="card-body"> 
+                    <h5 class="card-title">Statistiques E-mail</h5>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADHElEQVR4nO2ZO28UMRSFTbh3kwU6ChAvQUfDnwFEmT+AoAEJoSCFp8SzhhQJSoUSlFzvAgVCiIKGAqUBFB4JJE0oqEPWFsLo7gRIdj1hZnfG3oh7JHce+5zPd7wer1IikUgkEolEIpFIJBJlknusdlsNpw3hXUtQM4TPYrTVudnDKVdTu1QIuUm1wxLMWo2upxrBLHsLAmF5qrrPEnyKHvpPg4UV6j+oQuo7Dey3GuZ7IPwceyk1rJnGE5bgTBuE+sABS/A5Yvh59tDqi702dOV4cQA0PlmdcMgLIUYlECyu1PoP+cKveq0XB4Dw6xrqF6JXQnr4s7/7GI1LhYR3LxQYjT/WGajB+dZ+bIiNxdrw2NPafuyZvXcPoKZ2pRgZ8kLQsFBi+C/e8BqGfP0LORss6+qeDQwNh9sTYCGl7M+lPcPeSwaAXGrXUyDMxQwfDIBNg8DnhEIOS/6yN4QX//VsMAA2gXCj8BMjwUcewxP+UpbngwKwDIHwpvfDieBdR+EfVfe2hdd4OesYwQHYpBJueX9JckGAD97whFfyeIkCwCYQbqdAeJth5d/7jBvCq3l9RANgk9fhjheChje5w2u81omHqABsUgmDXggEM57wM76DC4/R6fxxARBMuRGFvjHdU7XdEozzcbV5zCYYd3W1zdt3RCGPtbkAUHr4TuQm1VZL8GBzAKD28G5Y9VkNJ92kqmYIW232HVZ93VZCeADkCe/UFqPxXnNPIHy10QeKm1Y7jcaXyXhwvw1CzkoIC4BSVp5grGVjXGrUKkcZzFpIDaocW3/v0BxzrJtKCAeAsoVveWaRb5qat00b3SN0ASEMAEope76vz7t55oGQ4XUoHwAFCN8FhHIBUMDwHUIoBIBr/g2W+Z0fLS3837lHs+4J7L17AJOqYgh/Rl35DiqBPbN3VYQM4bfoK5+zEtizKkqW4GFPrHyuSoCJwgAYwiM9s/IZK4E9q7LkYq98hkr4f8LrwBCMxsF1vwo90tiT7wKmFDXqlcPJnxIwYQifW42vY7RkbphgL+wpSHiRSCQSiUQikUgkEqnNr18dIflATv/YHQAAAABJRU5ErkJggg==" alt="new-post">
+                    <p class="card-text">Nombre de E-mails : </p>
+                </div> 
+            </div>
+        </div> <!-- Ajouter d'autres statistiques ou sections ici -->
+    </div>
+</div>
+{% endblock %}

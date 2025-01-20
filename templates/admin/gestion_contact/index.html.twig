@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin/GestionContactController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<!--Navbar-->
+<section>
+    <div class="container text-bg-warning">
+        <div class="d-flex flex-wrap align-items-left justify-content-left justify-content-lg">
+            <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>            </a>
+<nav id="sidebar" class="sidebar background-dark">
+    <div class="sidebar-content js-simplebar">
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<div class="fw-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Administrateur</font></font></div>
+				</div>
+
+				<ul class="sidebar-nav list-unstyled">
+					<li class="sidebar-item active">
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/admin/dashboard"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tableau de bord</font></font></a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="/admin/gestion/users"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Users</font></font></a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/admin/gestion/contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Contact</font></font></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/gestion/films"> <font style= "cal-align: inherit;"><font style= "vertical-align: inherit;">Gestion Films</font></font></a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/gestion/series"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gestion Séries</font></font></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+    <!-- End Navbar-->
+</section>
+<div class="example-wrapper">
+    <main class="px-3 text-center">
+    <h1>Gestion des contacts</h1><br>
+
+    <button type="button" class="btn btn-secondary position-relative">
+        Mails reçu <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg"><span class="visually-hidden">unread messages</span></span>
+    </button>
+    <button type="button" class="btn btn-dark position-relative">
+        Mails urgent <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg"><span class="visually-hidden">unread notifications</span></span>
+    </button>
+    <button type="button" class="btn btn-warning position-relative">
+        Mails envoyé <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg"><span class="visually-hidden">unread notifications</span></span>
+    </button>
+</div>
+{% endblock %}
