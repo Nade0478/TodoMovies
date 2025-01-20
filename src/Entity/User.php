@@ -44,9 +44,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $firstname = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?Profil $profil = null;
-
     #[ORM\ManyToOne(inversedBy: 'users')]
     private ?Films $film = null;
 
@@ -165,18 +162,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstname(string $firstname): static
     {
         $this->firstname = $firstname;
-
-        return $this;
-    }
-
-    public function getProfil(): ?Profil
-    {
-        return $this->profil;
-    }
-
-    public function setProfil(?Profil $profil): static
-    {
-        $this->profil = $profil;
 
         return $this;
     }
