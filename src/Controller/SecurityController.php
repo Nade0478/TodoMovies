@@ -31,6 +31,6 @@ class SecurityController extends AbstractController
     }
 
     #[Route(path: '/redirect-after-login', name: 'app_redirect_after_login')] 
-    public function redirectAfterLogin(): Response { return $this->redirectToRoute('app_profil'); 
+    public function redirectAfterLogin(): Response { return $this->redirectToRoute('app_user'); 
     }
 }

@@ -7,7 +7,10 @@ use App\Entity\Series;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class SeriesType extends AbstractType
 {
@@ -23,6 +26,21 @@ class SeriesType extends AbstractType
             ->add('summarize')
             ->add('nbrepisodes')
             ->add('nbrseasons')
+            ->add('avis', AvisType::class)
+            ->add('image', FileType::class, [ 
+                'label' => 'Photo de l’article', 
+                'mapped' => false, 
+                'required' => false, 
+                'constraints' => [ 
+                    new File([ 
+                        'maxSize' => '5000k', 
+                        'mimeTypes' => [ 
+                            'image/*', 
+                        ], 
+                        'mimeTypesMessage' => 'Image trop lourde', 
+                    ]) 
+                ], 
+            ]);
         ;
     }
 
