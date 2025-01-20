@@ -32,10 +32,9 @@ final class FilmsController extends AbstractController
         $film = new Films();
         $form = $this->createForm(FilmsType::class, $film);
         $form->handleRequest($request);
-
+        $imageFile = $form->get('image')->getData();
+        
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($film);
-            $entityManager->flush();
             $imageFile = $form->get('image')->getData(); 
             if ($imageFile) { 
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
@@ -46,7 +45,8 @@ final class FilmsController extends AbstractController
                     $this->getParameter('images_directory'), 
                     $newFilename
                 );
-                $films->setImage($newFilename); 
+
+                $film->setImage($newFilename); 
 
             } 
             $entityManager->persist($film); 

@@ -26,7 +26,7 @@ class FilmsType extends AbstractType
             ->add('summarize')
             ->add('avis')
             ->add('image', FileType::class, [ 
-                'label' => 'Photo de l’article', 
+                'label' => 'Photo films', 
                 'mapped' => false, 
                 'required' => false, 
                 'constraints' => [ 
@@ -39,7 +39,7 @@ class FilmsType extends AbstractType
                     ]) 
                 ], 
             ]);
-            ;
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

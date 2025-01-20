@@ -31,6 +31,20 @@ class Series
     #[ORM\Column]
     private ?int $nbrseasons = null;
 
+    #[ORM\Column(type: 'string')]
+    private ?string $image = null;
+
+    public function getImage():?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+        return $this;
+    }
+
     #[ORM\ManyToOne(inversedBy: 'series')]
     private ?Avis $avis = null;
 
@@ -165,7 +179,5 @@ class Series
         }
 
         return $this;
-    }
-
-    
+    }   
 }

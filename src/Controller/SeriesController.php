@@ -7,9 +7,15 @@ use App\Form\SeriesType;
 use App\Repository\SeriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Form\Extension\Core\Type\FileType; 
+use Symfony\Component\Validator\Constraints\File; 
 
 #[Route('/series')]
 final class SeriesController extends AbstractController
@@ -23,15 +29,31 @@ final class SeriesController extends AbstractController
     }
 
     #[Route('/new', name: 'app_series_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface 
+    $slugger): Response
     {
         $series = new Series();
         $form = $this->createForm(SeriesType::class, $series);
         $form->handleRequest($request);
+        $imageFile = $form->get('image')->getData(); 
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($series);
-            $entityManager->flush();
+        if  ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('image')->getData(); 
+            if ($imageFile) { 
+            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL 
+            $safeFilename = $slugger->slug($originalFilename); 
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension(); 
+            $imageFile->move( 
+                $this->getParameter('images_directory'), 
+                $newFilename
+            );
+
+            $series->setImage($newFilename);
+
+        } 
+            $entityManager->persist($series); 
+            $entityManager->flush(); 
 
             return $this->redirectToRoute('app_series_index', [], Response::HTTP_SEE_OTHER);
         }

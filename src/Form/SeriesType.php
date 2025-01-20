@@ -28,7 +28,7 @@ class SeriesType extends AbstractType
             ->add('nbrseasons')
             ->add('avis', AvisType::class)
             ->add('image', FileType::class, [ 
-                'label' => 'Photo de l’article', 
+                'label' => 'Photo series', 
                 'mapped' => false, 
                 'required' => false, 
                 'constraints' => [ 

@@ -25,6 +25,20 @@ class Films
     #[ORM\Column(type: Types::TEXT)]
     private ?string $summarize = null;
 
+    #[ORM\Column(type: 'string')]
+    private ?string $image = null;
+
+    public function getImage():?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+        return $this;
+    }
+
     #[ORM\ManyToOne(inversedBy: 'films')]
     private ?Avis $avis = null;
 

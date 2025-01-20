@@ -39,18 +39,22 @@
 </section>
 <!--End Navbar-->
 
+<main class="px-3">
     <h1>Index des séries</h1>
+    <p>Voici la liste des séries disponibles : </p><br>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Image</th>
                 <th>Titre</th>
                 <th>Auteur</th>
                 <th>Genre</th>
                 <th>Résumer</th>
                 <th>Nombre d'épisode</th>
                 <th>Nombre de saisons</th>
+                <th>Avis</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -59,11 +63,13 @@
             <tr>
                 <td>{{ series.id }}</td>
                 <td>{{ series.title }}</td>
+                <td><img src="{{ asset('uploads/image/' ~ series.image) }}" width="100"></td> 
                 <td>{{ series.autor }}</td>
                 <td>{{ series.genre.name }}</td>
                 <td>{{ series.summarize }}</td>
                 <td>{{ series.nbrepisodes }}</td>
                 <td>{{ series.nbrseasons }}</td>
+                <td>{{ series.avid }}</td>
                 <td>
                     <a href="{{ path('app_series_show', {'id': series.id}) }}">Montrer</a>
                     <a href="{{ path('app_series_edit', {'id': series.id}) }}">Editer</a>
@@ -78,4 +84,6 @@
     </table>
 
     <a href="{{ path('app_series_new') }}">Créer</a>
+</div>
+</main>
 {% endblock %}
