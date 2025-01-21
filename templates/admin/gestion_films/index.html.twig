@@ -57,7 +57,56 @@
   })
 </script>
 
+{# 
+  This template renders a table with a list of movies for the admin panel.
+  It includes the following features:
+  - A toolbar with a button to clear search filters.
+  - A loading indicator with the text "Filtre de films".
+  - A table with columns for movie ID, name, and genre.
+  - Filter controls for the movie name (search input) and genre (dropdown select).
+  - The table data is fetched from a JSON file located at "json/data1.json".
+  - The table is initialized using the Bootstrap Table plugin when the `mounted` function is called.
+#}
 <div class="bootstrap-table bootstrap5">
+      <div class="row mb-3">
+        <div class="col">
+          <input type="text" class="form-control" id="filter-name" placeholder="Nom du film">
+        </div>
+        <div class="col">
+          <select class="form-select" id="filter-genre">
+            <option value="">Tous les genres</option>
+            <option value="Action">Action</option>
+            <option value="Comédie">Comédie</option>
+            <option value="Drame">Drame</option>
+            <option value="Horreur">Horreur</option>
+            <option value="Science-fiction">Science-fiction</option>
+          </select>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary" id="apply-filters">Appliquer les filtres</button>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('apply-filters').addEventListener('click', function() {
+          var name = document.getElementById('filter-name').value.toLowerCase();
+          var genre = document.getElementById('filter-genre').value.toLowerCase();
+          var rows = document.querySelectorAll('#table tbody tr');
+
+          rows.forEach(function(row) {
+            var nameCell = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            var genreCell = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+            var matchesName = name === '' || nameCell.includes(name);
+            var matchesGenre = genre === '' || genreCell.includes(genre);
+
+            if (matchesName && matchesGenre) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        });
+      </script>
       <div class="fixed-table-toolbar">
         <div class="float-right search btn-group">
           <button class="btn btn-secondary" type="button" name="clearSearch" title="Effacer les filtres"><i class="bi bi-trash"></i> </button>

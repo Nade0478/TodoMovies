@@ -39,19 +39,19 @@
 <!--End Navbar-->
 
     <main class="px-3">
-        <h1>Bienvenue sur la page des films</h1><br>
+        <h1>Avis film</h1><br>
         <p>Voici la liste des films disponibles : </p><br>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Image</th>
                 <th>Titre</th>
                 <th>Auteur</th>
                 <th>Genre</th>
                 <th>Résumer</th>
                 <th>Avis</th>
+                <th>Note</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -64,7 +64,8 @@
                 <td>{{ films.autor }}</td>
                 <td>{{ films.genre.name }}</td>
                 <td>{{ films.summarize }}</td>
-                <td>{{ films.avis }}</td>               
+                <td>{{ films.avis }}</td>   
+                <td>{{ films.note }}</td>            
                 <td>
                     <a href="{{ path('app_films_show', {'id': films.id}) }}">Montrer</a>
                     <a href="{{ path('app_films_edit', {'id': films.id}) }}">Editer</a>
@@ -82,6 +83,7 @@
 </div>
 </main>
 
+<!-- Footer -->
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark text-white">
     <div class="col-md-4 d-flex align-items-center">
@@ -94,4 +96,6 @@
 </div>
 </main>
 </body>
+
 {% endblock %}
+
